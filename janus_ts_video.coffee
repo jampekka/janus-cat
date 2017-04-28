@@ -9,7 +9,7 @@ start_streaming = (host, port) ->
 	filesrc location=/dev/stdin !
 	tsdemux ! h264parse name=demux
 	demux. ! rtph264pay config-interval=-1 !
-	udpsink host=#{host} port=#{port} sync=true
+	udpsink host=#{host} port=#{port}
 	"""
 	pipeline = pipeline.split(/\s+/)
 	
@@ -32,7 +32,7 @@ stream_to_janus = (opts={}) ->
 			_videoport = 15000 + porttry*4
 			result = await streams.create 0,
 				type: "rtp"
-				description: 'trusas:' + opts.name ? "#{_videoport}"
+				description: opts.name ? "#{_videoport}"
 				audio: false
 				video: true
 				videoport: _videoport
