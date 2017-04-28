@@ -1,0 +1,15 @@
+{
+  "name": "janus-cat",
+  "version": "0.0.1",
+  "description": "Hacks to stream stuff to Janus WebRTC gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jami Pekkanen",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "janus-gateway-js": "^0.8.1",
+    "yargs": "^7.1.0"
+  }
+}
